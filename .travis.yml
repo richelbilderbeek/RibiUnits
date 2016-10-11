@@ -21,7 +21,6 @@ addons:
     - libboost1.55-all-dev
 
 script: 
-  - ./install_githubs.sh
   - qmake
   - make
   - ./RibiUnitsTest

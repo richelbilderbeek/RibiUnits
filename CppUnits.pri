@@ -1,5 +1,5 @@
 INCLUDEPATH += \
-    ../RibiClasses/CppUnits
+    ../RibiUnits
 
 SOURCES += \
     $$PWD/concentrationchange.cpp \
