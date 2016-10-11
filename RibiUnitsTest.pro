@@ -42,8 +42,8 @@ CONFIG(release, debug|release) {
 
 
 
-include(CppUnits.pri)
-include(CppUnitsTest.pri)
+include(RibiUnits.pri)
+include(RibiUnitsTest.pri)
 
 SOURCES += main_test_console.cpp
 
