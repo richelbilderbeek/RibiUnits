@@ -1,4 +1,4 @@
-sudo: true
+sudo: required
 language: cpp
 compiler: gcc
 
@@ -19,30 +19,19 @@ addons:
     - gcc-5
     - g++-5
     - libboost1.55-all-dev
-#    - gcov-5
-
-
-# Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
-before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
 
 script: 
   - ./install_githubs.sh
-  - ./build_console.sh
-  - ./RibiClassesTestConsole
-  - ./build_desktop.sh
-  - ./RibiClassesTestDesktop
+  - qmake
+  - make
+  - ./RibiUnitsTest
   - ./get_code_cov.sh
   - codecov
-  - travis_wait 50 ./do_oclint.sh
-  # - ./no_temp_files.sh # TODO: put this back in
+  - ./do_oclint.sh
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  #- cat oclint.log
 
 after_failure:
-  #- cat oclint.log
+  - bash <(curl -s https://codecov.io/bash)
 
