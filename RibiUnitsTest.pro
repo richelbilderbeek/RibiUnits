@@ -21,7 +21,7 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 CONFIG(release, debug|release) {
-  DEFINES += NDEBUG NTRACE_BILDERBIKKEL
+  DEFINES += NDEBUG
 }
 
 

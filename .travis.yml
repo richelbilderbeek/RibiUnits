@@ -8,6 +8,7 @@ install:
   - sudo apt install -qq libboost-all-dev
   # Codecov
   - sudo pip install codecov
+  # OCLint
   - ./install_oclint.sh
 
 script: 
