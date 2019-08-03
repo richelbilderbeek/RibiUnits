@@ -6,7 +6,7 @@
 #include <boost/units/io.hpp>
 
 // Boost.Test does not play well with -Weffc++
-#pragma GCC diagnostic push
+
 
 #include <boost/test/unit_test.hpp>
 
@@ -46,5 +46,5 @@ BOOST_AUTO_TEST_CASE(ribi_units_sulfidemoleculeamount)
   }
 }
 
-#pragma GCC diagnostic pop
+
 

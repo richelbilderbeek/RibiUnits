@@ -3,7 +3,7 @@
 
 #include <boost/units/systems/si.hpp>
 
-#pragma GCC diagnostic push
+
 
 
 namespace boost {
@@ -22,6 +22,6 @@ namespace boost {
   } // namespace units
 } //namespace boost
 
-#pragma GCC diagnostic pop
+
 
 #endif // SULFIDEMOLECULEAMOUNT_H

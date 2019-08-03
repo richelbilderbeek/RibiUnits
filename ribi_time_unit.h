@@ -4,13 +4,13 @@
 //Time
 // The relative (unitless) change of something in time
 
-#pragma GCC diagnostic push
+
 
 
 #include <boost/units/io.hpp>
 #include <boost/units/systems/si.hpp>
 #include <boost/units/systems/si/prefixes.hpp>
-#pragma GCC diagnostic pop
+
 
 namespace boost {
   namespace units {

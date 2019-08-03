@@ -5,7 +5,7 @@
 #include "massflow.h"
 
 // Boost.Test does not play well with -Weffc++
-#pragma GCC diagnostic push
+
 
 #include <boost/test/unit_test.hpp>
 
@@ -48,5 +48,5 @@ BOOST_AUTO_TEST_CASE(ribi_units_volumetricflow)
     const MassFlow phi_m{phi_v * d};
   }
 }
-#pragma GCC diagnostic pop
+
 
