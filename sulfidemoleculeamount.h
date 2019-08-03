@@ -4,7 +4,7 @@
 #include <boost/units/systems/si.hpp>
 
 #pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Weffc++"
+
 
 namespace boost {
   namespace units {
