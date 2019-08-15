@@ -15,8 +15,8 @@ script:
   - qmake
   - make
   - ./RibiUnitsTest
-  - ./get_code_cov.sh
-  - codecov
+  - ./get_code_cov.sh >/dev/null
+  - codecov >/dev/null
   - ./do_oclint.sh
 
 after_success:
