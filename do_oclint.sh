@@ -1,11 +1,10 @@
 #!/bin/bash
 
-cpp_files=`find . | egrep ".*\.cpp$" | egrep -v "^qrc_.*\.cpp$" | egrep -v "^moc_.*\.cpp$" | egrep -v "^.*_test\.cpp$" | egrep -v "CppQt" | egrep -v "CppWt"`
-h_files=  `find . | egrep ".*\.h$"   | egrep -v "^ui_.*\.h$"    | egrep -v "CppQt" | egrep -v "CppWt"`
+cpp_files=$(find . | egrep ".*\.cpp$" | egrep -v "^qrc_.*\.cpp$" | egrep -v "^moc_.*\.cpp$" | egrep -v "^.*_test\.cpp$" | egrep -v "CppQt" | egrep -v "CppWt")
+h_files=  $(find . | egrep ".*\.h$"   | egrep -v "^ui_.*\.h$"    | egrep -v "CppQt" | egrep -v "CppWt")
 
 echo $cpp_files
 echo $h_files
-
 
 ./oclint-0.10.3/bin/oclint -o oclint.log \
   -disable-rule ShortVariableName \
