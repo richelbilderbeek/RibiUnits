@@ -1,0 +1,27 @@
+name: lint
+
+on:
+  push:
+  pull_request:
+  schedule:
+  - cron: "0 0 2 * *"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cpp-linter/cpp-linter-action@main
+        id: linter
+        continue-on-error: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          style: llvm
+          files-changed-only: false
+
+      - name: Fail fast
+        if: steps.linter.outputs.checks-failed != 0
+        run: |
+          echo "Too bad, style failed. Look at the output of the previous line :-)"
+          exit 1
